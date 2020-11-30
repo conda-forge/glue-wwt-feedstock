@@ -1,4 +1,4 @@
-{% set version = "0.4" %}
+{% set version = "0.5" %}
 
 package:
   name: glue-wwt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/glue-wwt/glue-wwt-{{ version }}.tar.gz
-  sha256: b2329f04e7c70758d16f6a9a37865012fa925f82e6cd7319433bfdd01beef1f2
+  sha256: 4fe1e333c4f7830bd2df6fe6b48033448877c38bd5c1843b84306d03d1fd26e7
 
 build:
   number: 0
@@ -24,7 +24,8 @@ requirements:
   run:
     - python >=3.6
     - numpy
-    - glue-core >=0.15
+    - glue-core >=1.0
+    - echo
     - qtpy
     - astropy
     - pywwt >=0.6.0
