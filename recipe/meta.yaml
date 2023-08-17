@@ -26,6 +26,8 @@ requirements:
     - numpy
     - glue-core >=1.0
     - echo
+    - pyqt
+    - pyqtwebengine
     - qtpy
     - astropy
     - pywwt >=0.6.0
