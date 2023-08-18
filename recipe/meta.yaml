@@ -38,6 +38,8 @@ test:
   imports:
     - glue_wwt
   commands:
+    - pip freeze
+    - pip check
     - python -c "from glue_wwt import setup; setup()"
 
 about:
