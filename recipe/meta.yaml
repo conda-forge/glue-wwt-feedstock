@@ -26,13 +26,22 @@ requirements:
     - numpy
     - glue-core >=1.0
     - echo
+    - pyqt
+    - pyqtwebengine
     - qtpy
     - astropy
     - pywwt >=0.6.0
 
 test:
+  requires:
+    - notebook
+    - pip
   imports:
     - glue_wwt
+  commands:
+    - pip freeze
+    - pip check
+    - python -c "from glue_wwt import setup; setup()"
 
 about:
   home: https://github.com/glue-viz/glue-wwt
@@ -43,4 +52,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - astrofrog-conda-forge
+    - astrofrog
