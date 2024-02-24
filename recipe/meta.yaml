@@ -1,4 +1,4 @@
-{% set version = "0.5" %}
+{% set version = "0.7.0" %}
 
 package:
   name: glue-wwt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/glue-wwt/glue-wwt-{{ version }}.tar.gz
-  sha256: 4fe1e333c4f7830bd2df6fe6b48033448877c38bd5c1843b84306d03d1fd26e7
+  sha256: f1de7a6228f3667412e1567f59cd1b3ace0a878a8a8debb8c6a0fbc5862d2dc5
 
 build:
   number: 0
