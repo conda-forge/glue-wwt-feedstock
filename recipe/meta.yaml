@@ -41,6 +41,7 @@ test:
     - pip
 
 about:
+  home: https://github.com/glue-viz/glue-wwt
   summary: Glue WorldWide Telescope plugin
   license: BSD-3-Clause
   license_file: LICENSE
