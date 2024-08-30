@@ -16,7 +16,7 @@ build:
 requirements:
 
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
     - setuptools >=30.3
     - setuptools_scm
@@ -24,11 +24,14 @@ requirements:
   run:
     - python >=3.6
     - numpy
-    - glue-core >=1.0
+    - glue-core >=1.13.1
     - echo
     - qtpy
     - astropy
-    - pywwt >=0.6.0
+    - pywwt >=0.21.0
+    - packaging
+    - glue-qt
+    - pyqtwebengine
 
 test:
   imports:
