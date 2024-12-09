@@ -9,7 +9,7 @@ source:
   sha256: 2fbab973c24015f8a99bccddcfe08cf15fccd6e501d922056de0ab8e90f18eab
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   noarch: python
 
@@ -27,7 +27,7 @@ requirements:
     - glue-core >=1.13.1
     - echo
     - qtpy
-    - astropy
+    - astropy-base
     - pywwt >=0.21.0
     - packaging
     - glue-qt
