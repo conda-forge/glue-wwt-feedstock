@@ -1,15 +1,15 @@
-{% set version = "0.7.2" %}
+{% set version = "0.8.0" %}
 
 package:
   name: glue-wwt
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/g/glue-wwt/glue-wwt-{{ version }}.tar.gz
-  sha256: 2fbab973c24015f8a99bccddcfe08cf15fccd6e501d922056de0ab8e90f18eab
+  url: https://pypi.org/packages/source/g/glue-wwt/glue_wwt-{{ version }}.tar.gz
+  sha256: 8ea68420ef6a07d453117284563d921a23f1e96ec8dd002817d6953c6b045769
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
   noarch: python
 
@@ -18,7 +18,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools >=30.3
+    - setuptools >=61.2
     - setuptools_scm
 
   run:
@@ -28,16 +28,30 @@ requirements:
     - echo
     - qtpy
     - astropy-base
-    - pywwt >=0.21.0
+    - pywwt >=0.24.1
+    # pywwt >=0.26 imports nest_asyncio but its conda package does not
+    # depend on it
+    - nest-asyncio
     - packaging
+    - ipywidgets >=8
     - glue-qt
     - pyqtwebengine
 
 test:
   requires:
     - python {{ python_min }}
+    - pip
+    - glue-jupyter
+    # On Python 3.10 the solver can otherwise select dask 2023.3.0, which
+    # has no upper bound on numpy but fails to import with numpy 2
+    - dask-core >=2024.8
   imports:
     - glue_wwt
+    - glue_wwt.viewer
+    - glue_wwt.viewer.qt
+    - glue_wwt.viewer.jupyter
+  commands:
+    - pip check
 
 about:
   home: https://github.com/glue-viz/glue-wwt
